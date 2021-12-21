@@ -1,0 +1,32 @@
+Annotations
+
+– @Entity annotation indicates that the class is a persistent Java class.
+– @Table annotation provides the table that maps this entity.
+– @Id annotation is for the primary key.
+– @GeneratedValue annotation is used to define generation strategy for the primary key. GenerationType.AUTO means Auto Increment field.
+– @Column annotation is used to define the column in database that maps annotated field.
+
+@CrossOrigin(origins = "http://localhost:8081")
+@RestController
+@RequestMapping("/api")
+
+@Autowired
+@GetMapping
+@PostMapping
+@PutMapping
+@DeleteMapping
+
+
+
+
+Spring boot
+convention over configuration software design paradigm
+spring framework + embedded servers
+dependency injection approach
+simplifies integration with JPA/Hibernate ORM, Struts
+no XML requirement for configuration
+CLI tool for developing and testing
+
+Negatives-dependencies increase size of application
+
+
