@@ -1,0 +1,12 @@
+SELECT DISTINCT(CITY) FROM STATION WHERE SUBSTR(CITY,1,1) IN ('A','E','I','O','U');
+
+SELECT DISTINCT(CITY) FROM STATION WHERE CITY LIKE '%[a,e,i,o,u]' ;
+
+SELECT DISTINCT(CITY) FROM STATION WHERE CITY LIKE '[a,e,i,o,u]%[a,e,i,o,u]' ;
+
+select name from employee order by name asc;
+
+select name from employee where salary>2000 and months<10 order by employee_id asc
+
+SELECT DISTINCT(CITY) FROM STATION WHERE CITY LIKE '[^AEIOU]%' ;
+
