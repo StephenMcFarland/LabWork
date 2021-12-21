@@ -10,3 +10,6 @@ select name from employee where salary>2000 and months<10 order by employee_id a
 
 SELECT DISTINCT(CITY) FROM STATION WHERE CITY LIKE '[^AEIOU]%' ;
 
+SELECT DISTINCT(CITY) FROM STATION WHERE CITY LIKE '%[^AEIOU]' ;
+
+SELECT DISTINCT(CITY) FROM STATION WHERE CITY LIKE '%[^AEIOU]' or city like '[^AEIOU]%' ;
