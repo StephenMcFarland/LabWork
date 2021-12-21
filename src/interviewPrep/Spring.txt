@@ -15,6 +15,10 @@ Annotations
 @PostMapping
 @PutMapping
 @DeleteMapping
+@Override
+@Column
+@GeneratedValue
+@Id
 
 
 
