@@ -1,3 +1,9 @@
+Fibonacci Sequence
+sum=n1+n2
+n1=n2
+n2=sum
+print n1
+
 
 Exception is an abnormal condition. An event that disrupts the normal flow of the program.
 ClassNotFoundException, IOException, SQLException, RemoteException
