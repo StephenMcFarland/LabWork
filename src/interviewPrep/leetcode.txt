@@ -1,3 +1,22 @@
+  public boolean containsDuplicate(int[] nums) {
+        Arrays.sort(nums);
+        boolean contains = false;
+   
+        int i = 0;
+        
+        for(int j = 1;j<nums.length;j++) { 
+            if(nums[i] == nums[j]) {
+                contains = true;
+                break;
+            }
+            i++;
+        }
+        return contains; 
+    }
+ 
+ 
+ 
+ 
  
     public int fib(int n) {
         int sum=0;
