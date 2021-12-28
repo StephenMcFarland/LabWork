@@ -1,3 +1,68 @@
+ 
+    public int fib(int n) {
+        int sum=0;
+        int n1=1;
+        int n2=0;
+        
+        for(int i=0;i<=n;i++){
+            sum = n1+n2;
+            n1=n2;
+            n2=sum;
+        }
+        return n1;
+
+
+
+
+    public int removeDuplicates(int[] nums) {
+//         int prev= nums[0];
+//         int max=nums[nums.length-1];
+        
+//         for(int i=1;i<nums.length;i++){
+//             if(prev==nums[i]){
+//                 nums[i]=101;
+//             }else{
+//                 prev=nums[i];
+//             }
+            
+//         }
+//         Arrays.sort(nums);
+//         int index = nums.length-1;
+//         while(index>0){
+//             if(nums[index]==max){
+//                 break;
+//             }else{
+//                 index--; 
+//             }
+           
+//         }
+//         return index;
+
+         if(nums.length == 0) {
+            return 0;
+        }
+        int i = 0;
+        
+        for(int j = 1;j<nums.length;j++) { // two pointers i = 0; j = i + 1
+            if(nums[i] != nums[j]) {
+                i++;
+                nums[i] = nums[j]; // replace the current with the new unique number found as nums[i] != nums[j]
+            }
+        }
+        return i + 1; // index being based on 0th 
+    }
+}
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  public int[] twoSum(int[] nums, int target) {
         
         int bi=0;
