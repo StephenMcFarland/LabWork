@@ -1,0 +1,23 @@
+ public int[] twoSum(int[] nums, int target) {
+        
+        int bi=0;
+        int ei=0;
+        int[] ia = new int[2];
+        
+        for(int i=0;i<nums.length;i++){
+            for(int j=i+1;j<nums.length;j++){
+                if(nums[i]+nums[j]==target){
+                    bi=i;
+                    ei=j;
+                    break;
+                }
+            }
+          
+        }
+          ia[0]=bi;
+            ia[1]=ei;
+            return ia;
+            }
+            
+            Runtime: 43 ms, faster than 40.63% of Java online submissions for Two Sum.
+Memory Usage: 38.9 MB, less than 93.37% of Java online submissions for Two Sum.
