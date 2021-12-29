@@ -1,0 +1,9 @@
+    public static List<Integer> dynamicArray(int n, List<List<Integer>> queries) {
+    // Write your code here
+int lastAnswer = 0;
+int idx = (x+lastAnswer)%n;
+int[][] arr = new int[n][n];
+
+
+
+    }
