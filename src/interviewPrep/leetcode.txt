@@ -1,3 +1,26 @@
+  //this one took way too long. lots of not working code at first. ugh.
+     public int removeElement(int[] nums, int val) {
+        int count=0;
+        for(int i=0;i<nums.length;i++){
+            if(nums[i]==val){
+                nums[i]=101;
+            }else{count++;}
+        }
+        Arrays.sort(nums);
+        //int k=findFirst(nums,nums.length,101);
+        //int k=Arrays.asList(nums).indexOf(101);
+        //int k = nums.indexOf(101);
+        //int k= Arrays.binarySearch(nums, 101);
+//         int i=0;
+//         while(nums[i]<=101){
+            
+//             i++;
+//         }
+        return count;
+    }
+  
+  
+  
   
       public void merge(int[] nums1, int m, int[] nums2, int n) {
         for(int i=0;i<nums2.length;i++){
