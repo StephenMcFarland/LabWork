@@ -1,3 +1,41 @@
+  //8 of 10 test cases passed 
+     public static List<Integer> rotateLeft(int d, List<Integer> arr) {
+    // Write your code here
+    int temp1 = 0;
+    int temp2 = 0;
+            for(int i=0;i<d;i++){
+                for(int j=arr.size()-1;j>=0;j--){
+                    int p = 0;
+                    if(j==0){
+                        p=arr.size()-1;
+                    }else{
+                        p=j-1;
+                    }
+                    if(j==arr.size()-1){
+                       temp1=arr.get(j); 
+                        temp2=arr.get(p);
+                    arr.set(p,temp1);
+                    
+                    }else{
+                       temp1=temp2; 
+                        temp2=arr.get(p);
+                    arr.set(p,temp1);
+                    
+                    }
+                
+                    
+                    
+                }
+            }
+            return arr;
+    }
+   
+   
+   
+   
+   
+   
+   
     public static List<Integer> dynamicArray(int n, List<List<Integer>> queries) {
     // Write your code here
 int lastAnswer = 0;
