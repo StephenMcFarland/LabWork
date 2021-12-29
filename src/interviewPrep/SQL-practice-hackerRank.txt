@@ -1,3 +1,5 @@
+select avg(population) from city where district='California';
+
 select sum(population) from city where district='California';
 
 select count(name) from city where population>100000;
