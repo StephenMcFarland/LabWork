@@ -1,3 +1,50 @@
+
+//really tough 'easy' one with priority queue
+public static int cookies(int k, List<Integer> A) {
+    // Write your code here
+    int numCookies = A.size();
+        int minSweetness = k;
+     int count = 0;
+        PriorityQueue<Integer> he = new PriorityQueue<Integer>(numCookies);
+        for(int i = 0; i < numCookies; i++){
+            int sweetness = A.get(i);
+            he.add(sweetness);
+        }
+        while(he.peek() < minSweetness && he.size() > 1){
+            int ne = he.poll() + 2*he.poll();
+            he.add(ne);
+            count++;
+        }
+        if(he.peek() >= minSweetness){
+            return count;
+        } else{
+            return -1;
+         }
+//  Collections.sort(A);
+//     int c=0;
+//     int ls1 = A.get(0);
+//     int ls2 = 0;
+//     while(ls1<=k&&ls2<=k){
+//      //Collections.sort(A);
+//      ls1 = Collections.min(A);//A.get(0);
+//      A.remove(A.indexOf(ls1));
+//      ls2 = Collections.min(A);//A.get(1);
+//      //A.remove(0);
+//      A.remove(A.indexOf(ls2));
+//      A.add(ls1+2*ls2);
+//      c++;  
+//     //    if(c>100500){
+//     //     return -1;
+//     // } 
+//     }
+  
+// return c-1;
+    }
+
+
+
+
+
   
   public static List<Integer> matchingStrings(List<String> strings, List<String> queries) {
     int count=0;
