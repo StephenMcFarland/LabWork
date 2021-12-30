@@ -1,3 +1,56 @@
+  //I guess I can use an arraylist
+    public int[] intersect(int[] nums1, int[] nums2) {
+        
+        
+        List<Integer> newList= new ArrayList<Integer>();
+int[] count = new int[1001];
+//Counting the array elements repetition and storing in another array
+for(int item:nums1) {
+count[item]++;
+}
+//looping and adding into new list
+for(int i:nums2) {
+if (count[i] != 0) {
+count[i]--;
+newList.add(i);
+}
+}
+int[] arr=new int[newList.size()];
+int i=0;
+for(int x=0;x<newList.size();x++){
+arr[i++]=newList.get(x);
+}
+return arr;
+//         int[] is = new int[1000];
+//         int c=0;
+//         for(int z=0;z<is.length;z++){
+//             is[z]=1001;
+//         }
+//         for(int i=0;i<nums1.length;i++){
+//             for(int j=0;j<nums2.length;j++){
+//                 if(nums1[i]==nums2[j]){
+                    
+//                     is[c]=nums2[j];
+//                     nums1[i]=1001;
+//                     nums2[j]=1001;
+//                     c++;
+//                 }
+//             }
+//         }
+//         int oc=0;
+//         for(int i=0;i<is.length;i++){
+//             if(is[i]!=1001){
+//                 oc++;
+//             }
+//         }
+//         int[] ia = new int[oc];
+//         for(int q=0;q<oc;q++){
+//             if(is[q]<1001)
+//             ia[q]=is[q];
+//         }
+//         return ia;
+  
+  
   //this one took way too long. lots of not working code at first. ugh.
      public int removeElement(int[] nums, int val) {
         int count=0;
