@@ -1,3 +1,66 @@
+// Java Prep Java List
+//Just started need to accomodate varying number of queries
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+       Scanner in = new Scanner(System.in);
+//        5
+// 12 0 1 78 12
+// 2
+// Insert
+// 5 23
+// Delete
+// 0 print out result one line of integers separated by space
+
+int n = in.nextInt(); //# in array
+String arr = in.nextLine(); // array
+int q = in.nextInt(); // # of commands to perform
+String a1 = in.nextLine(); // word command
+String a1index = in.nextLine(); // index and num to perform
+String a2 = in.nextLine(); // 2nd word command
+int a2index = in.nextInt(); // index
+String[] a1a = a1index.split(" ");
+
+ArrayList<Integer> ial = new ArrayList<Integer>();
+String[] ia = arr.split(" ");
+String v = "";
+for(int i=0;i<ia.length;i++){
+    v = ia[i];
+    ial.add(Integer.parseInt(v));
+}
+if(a1.equals("Insert")){
+ial.set(Integer.parseInt(a1a[0]),Integer.parseInt(a1a[1]));
+ial.set(Integer.parseInt(a1a[0]),Integer.parseInt(a1a[1]));
+}
+if(a2.equals("Delete")){
+ial.remove(a2index);
+}
+
+for(int j=0;j<ial.size();j++){
+System.out.print(ial.get(j));
+if(j<ial.size()){
+    System.out.print(" ");
+}
+}
+
+
+
+
+    }
+}
+
+
+
+
+
+
+
 
 //really tough 'easy' one with priority queue
 public static int cookies(int k, List<Integer> A) {
