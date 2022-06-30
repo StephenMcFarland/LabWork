@@ -1,3 +1,12 @@
+
+
+//Partially correct, hang up with spacing of parentheses and maintaining profession with name
+select name,"(",SUBSTR(occupation,1,1),")" from occupations order by name asc;
+select "There are a total of ",count(occupation)," doctors." as occupation_count from occupations where occupation="Doctor";
+select "There are a total of ",count(occupation)," singers." as occupation_count from occupations where occupation="Singer";
+select "There are a total of ",count(occupation)," actors." as occupation_count from occupations where occupation="Actor";
+select "There are a total of ",count(occupation)," professors." as occupation_count from occupations where occupation="Professor";
+
 select sum(population) from city where countrycode='jpn';
 
 select round(avg(population)) from city
