@@ -1,3 +1,5 @@
+//find difference of average salaries and erroneous average (after taking all zeros out)
+SELECT CEIL((AVG(salary)) - (AVG(REPLACE(salary, '0', '')))) AS avg_salary FROM employees;
 
 //go back to basic problems
 select max(population) - (select min(population) from city) from city;
