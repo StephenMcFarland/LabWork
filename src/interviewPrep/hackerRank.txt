@@ -1,5 +1,5 @@
 
-//stuck on this one, getting mostly right, count consecutive subarrays that have negative sum
+//stuck on this one, getting mostly right, count consecutive subarrays that have negative sum making it harder than it needs to be
 ArrayList<Integer> A = new ArrayList<Integer>();
         ArrayList<Integer> ni = new ArrayList<Integer>();
         Scanner scanner = new Scanner(System.in);
@@ -9,38 +9,28 @@ for(int e=0;e<n;e++){
     int ae = scanner.nextInt();
     A.add(ae);
 }
-//String myString = scanner.next();
+
 scanner.close();
 
         int np=0;
-        
-        for(int i=0;i<n;i++){
-            if(A.get(i)<0){
-                np++;
-                //ni.add(i);
-                System.out.println(i);
-            }
-        }
+   
         ArrayList<Integer> sub = new ArrayList<Integer>();
         for(int j=0;j<n;j++){
-            sub.add(A.get(j));
-            //sub.clear();
-            for(int k=j+1;k<n;k++){
-                int sum = A.get(j);
+            int sum = 0;
+           
+            for(int k=j;k<n;k++){
+                
                 
                 sum+=A.get(k);
-                sub.add(A.get(k));
+                
                 if(sum<0){
                     np++;
-                    //System.out.println(A.get(j) + " " + A.get(sum) + ", ");               
-                    System.out.println(sub);
-                    //sub.clear();
-                    //break;
-                    //sub.add(A.get(j));
+                               
+                 
                 }
             }
         }
-
+System.out.println(np);
 
 
 
