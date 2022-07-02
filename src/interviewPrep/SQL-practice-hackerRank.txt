@@ -1,3 +1,8 @@
+
+
+select max(salary * months), count(salary*months) from employee where salary*months=108064;
+
+
 //find difference of average salaries and erroneous average (after taking all zeros out)
 SELECT CEIL((AVG(salary)) - (AVG(REPLACE(salary, '0', '')))) AS avg_salary FROM employees;
 
