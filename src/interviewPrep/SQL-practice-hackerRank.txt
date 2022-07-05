@@ -1,3 +1,6 @@
+//don't forget to change DB2 to MySql
+select round(sum(lat_n),2), round(sum(long_w),2) from station;
+
 //use count(*)
 select (salary * months)as earnings ,count(*) from employee group by 1 order by earnings desc limit 1;
 //need to query without finding max first
