@@ -1,0 +1,10 @@
+   
+//convert ascii to char https://www.delftstack.com/howto/java/java-ascii-to-char/
+    public static void main(String args[]) {
+        Scanner in = new Scanner(System.in);
+        int charCount = in.nextInt();
+        for (int i = 0; i < charCount; i++) {
+            int charCode = in.nextInt();
+            char cc = (char)charCode;
+            System.out.print(cc);
+        }
