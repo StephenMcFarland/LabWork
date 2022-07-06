@@ -1,3 +1,20 @@
+//convert string to camelCase PascalCase or snake_case 11% completed
+   public static void main(String args[]) {
+        Scanner in = new Scanner(System.in);
+        String name = in.nextLine();
+        StringBuilder sb = new StringBuilder(name.toLowerCase());
+        String ms = name.toLowerCase();
+        String format = in.next();
+        if(format.equals("camelCase")){
+                //sb.replace(" ", "");
+                System.out.print(sb);
+        }else if(format.equals("PascalCase")){
+
+        }else if(format.equals("snake_case")){
+            ms=ms.replace(" ","_");
+            System.out.print(ms);
+        }
+    
    
 //convert ascii to char https://www.delftstack.com/howto/java/java-ascii-to-char/
     public static void main(String args[]) {
