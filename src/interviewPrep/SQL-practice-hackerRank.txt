@@ -1,3 +1,6 @@
+
+SELECT ROUND(long_w,4) FROM STATION WHERE lat_n = (SELECT MAX(lat_n) FROM STATION WHERE lat_n < 137.2345);
+
 select round(max(lat_n),4) from station where lat_n<137.2345;
 //don't forget to change DB2 to MySql
 select round(sum(lat_n),2), round(sum(long_w),2) from station;
