@@ -1,4 +1,13 @@
-
+//this example made it easy https://www.tutorialspoint.com/java/math/biginteger_isprobableprime.htm
+BigInteger bi1;
+bi1 = new BigInteger(n);
+        bufferedReader.close();
+        if(bi1.isProbablePrime(1)){
+            System.out.println("prime");
+        }else{
+            System.out.println("not prime");
+        }
+        
 //stuck on this one, getting mostly right, count consecutive subarrays that have negative sum making it harder than it needs to be
 ArrayList<Integer> A = new ArrayList<Integer>();
         ArrayList<Integer> ni = new ArrayList<Integer>();
