@@ -1,0 +1,239 @@
+//simplify the algorithm don't always revert to nested fors
+ public int maxProfit(int[] prices) {
+        
+        int profit = 0;
+int start = 1;
+int min = prices[0];
+int n = prices.length;
+while(start < n)
+{
+if(prices[start] < min)
+{
+min = prices[start];
+}
+else if(prices[start] > min)
+{
+profit = Math.max(profit, prices[start] - min);
+}
+start ++;
+}
+
+    return profit;
+}
+//         int mp=0;
+//         int b=0;
+//         int s=0;
+        
+//         for(int i=0;i<prices.length;i++){
+//             for(int j=i+1;j<prices.length;j++){
+//                 b=prices[i];
+//                 s=prices[j];
+//                 mp = Math.max(mp, s - b);
+//                 // if(s-b>mp){
+//                 //     mp=s-b;
+//                 // }
+//             }
+//         }
+//         if(mp>0){
+//             return mp;
+//         }else{return 0;}
+
+  
+  
+  
+  
+  
+  //I guess I can use an arraylist
+    public int[] intersect(int[] nums1, int[] nums2) {
+        
+        
+        List<Integer> newList= new ArrayList<Integer>();
+int[] count = new int[1001];
+//Counting the array elements repetition and storing in another array
+for(int item:nums1) {
+count[item]++;
+}
+//looping and adding into new list
+for(int i:nums2) {
+if (count[i] != 0) {
+count[i]--;
+newList.add(i);
+}
+}
+int[] arr=new int[newList.size()];
+int i=0;
+for(int x=0;x<newList.size();x++){
+arr[i++]=newList.get(x);
+}
+return arr;
+//         int[] is = new int[1000];
+//         int c=0;
+//         for(int z=0;z<is.length;z++){
+//             is[z]=1001;
+//         }
+//         for(int i=0;i<nums1.length;i++){
+//             for(int j=0;j<nums2.length;j++){
+//                 if(nums1[i]==nums2[j]){
+                    
+//                     is[c]=nums2[j];
+//                     nums1[i]=1001;
+//                     nums2[j]=1001;
+//                     c++;
+//                 }
+//             }
+//         }
+//         int oc=0;
+//         for(int i=0;i<is.length;i++){
+//             if(is[i]!=1001){
+//                 oc++;
+//             }
+//         }
+//         int[] ia = new int[oc];
+//         for(int q=0;q<oc;q++){
+//             if(is[q]<1001)
+//             ia[q]=is[q];
+//         }
+//         return ia;
+  
+  
+  //this one took way too long. lots of not working code at first. ugh.
+     public int removeElement(int[] nums, int val) {
+        int count=0;
+        for(int i=0;i<nums.length;i++){
+            if(nums[i]==val){
+                nums[i]=101;
+            }else{count++;}
+        }
+        Arrays.sort(nums);
+        //int k=findFirst(nums,nums.length,101);
+        //int k=Arrays.asList(nums).indexOf(101);
+        //int k = nums.indexOf(101);
+        //int k= Arrays.binarySearch(nums, 101);
+//         int i=0;
+//         while(nums[i]<=101){
+            
+//             i++;
+//         }
+        return count;
+    }
+  
+  
+  
+  
+      public void merge(int[] nums1, int m, int[] nums2, int n) {
+        for(int i=0;i<nums2.length;i++){
+            nums1[i+m]=nums2[i];
+        }
+        Arrays.sort(nums1);
+        
+    }
+  
+  
+  
+  public boolean containsDuplicate(int[] nums) {
+        Arrays.sort(nums);
+        boolean contains = false;
+   
+        int i = 0;
+        
+        for(int j = 1;j<nums.length;j++) { 
+            if(nums[i] == nums[j]) {
+                contains = true;
+                break;
+            }
+            i++;
+        }
+        return contains; 
+    }
+ 
+ 
+ 
+ 
+ 
+    public int fib(int n) {
+        int sum=0;
+        int n1=1;
+        int n2=0;
+        
+        for(int i=0;i<=n;i++){
+            sum = n1+n2;
+            n1=n2;
+            n2=sum;
+        }
+        return n1;
+
+
+
+
+    public int removeDuplicates(int[] nums) {
+//         int prev= nums[0];
+//         int max=nums[nums.length-1];
+        
+//         for(int i=1;i<nums.length;i++){
+//             if(prev==nums[i]){
+//                 nums[i]=101;
+//             }else{
+//                 prev=nums[i];
+//             }
+            
+//         }
+//         Arrays.sort(nums);
+//         int index = nums.length-1;
+//         while(index>0){
+//             if(nums[index]==max){
+//                 break;
+//             }else{
+//                 index--; 
+//             }
+           
+//         }
+//         return index;
+
+         if(nums.length == 0) {
+            return 0;
+        }
+        int i = 0;
+        
+        for(int j = 1;j<nums.length;j++) { // two pointers i = 0; j = i + 1
+            if(nums[i] != nums[j]) {
+                i++;
+                nums[i] = nums[j]; // replace the current with the new unique number found as nums[i] != nums[j]
+            }
+        }
+        return i + 1; // index being based on 0th 
+    }
+}
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ public int[] twoSum(int[] nums, int target) {
+        
+        int bi=0;
+        int ei=0;
+        int[] ia = new int[2];
+        
+        for(int i=0;i<nums.length;i++){
+            for(int j=i+1;j<nums.length;j++){
+                if(nums[i]+nums[j]==target){
+                    bi=i;
+                    ei=j;
+                    break;
+                }
+            }
+          
+        }
+          ia[0]=bi;
+            ia[1]=ei;
+            return ia;
+            }
+            
+            Runtime: 43 ms, faster than 40.63% of Java online submissions for Two Sum.
+Memory Usage: 38.9 MB, less than 93.37% of Java online submissions for Two Sum.

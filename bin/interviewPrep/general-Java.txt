@@ -1,0 +1,31 @@
+Fibonacci Sequence
+sum=n1+n2
+n1=n2
+n2=sum
+print n1
+
+
+Exception is an abnormal condition. An event that disrupts the normal flow of the program.
+ClassNotFoundException, IOException, SQLException, RemoteException
+
+// what might go inside your custom exception class
+class MyCustomException extends Exception  
+{  
+    
+}
+
+      try  
+        {  
+            // throw an object of user defined exception 
+            //how does the custom exception actually get thrown 
+            throw new MyCustomException();  
+        } 
+              catch (MyCustomException ex)  
+        {  
+            System.out.println("Caught the exception");  
+            System.out.println(ex.getMessage());  
+        }  
+
+Difference between HashMap and HashTable?
+HashMap is faster, non-synchronized, 1 null key, accepts null values
+HashTable is thread safe, no null values, older, synchronized

@@ -1,0 +1,70 @@
+select round(long_w,4) from station where lat_n = (select min(lat_n) from station where lat_n>38.7780);
+
+select round(min(lat_n),4) from station where lat_n>38.7780;
+
+SELECT ROUND(long_w,4) FROM STATION WHERE lat_n = (SELECT MAX(lat_n) FROM STATION WHERE lat_n < 137.2345);
+
+select round(max(lat_n),4) from station where lat_n<137.2345;
+//don't forget to change DB2 to MySql
+select round(sum(lat_n),2), round(sum(long_w),2) from station;
+
+//use count(*)
+select (salary * months)as earnings ,count(*) from employee group by 1 order by earnings desc limit 1;
+//need to query without finding max first
+select max(salary * months), count(salary*months) from employee where salary*months=108064;
+
+
+//find difference of average salaries and erroneous average (after taking all zeros out)
+SELECT CEIL((AVG(salary)) - (AVG(REPLACE(salary, '0', '')))) AS avg_salary FROM employees;
+
+//go back to basic problems
+select max(population) - (select min(population) from city) from city;
+
+//copy and learn from an answer that works
+select concat(Name,'(',Substr(Occupation,1,1),')') as Name from occupations Order by Name;
+select concat('There are a total of',' ',count(occupation),' ',lower(occupation),'s.') as total from occupations group by occupation order by total;
+
+//Partially correct, hang up with spacing of parentheses and maintaining profession with name
+select name,"(",SUBSTR(occupation,1,1),")" from occupations order by name asc;
+select "There are a total of ",count(occupation)," doctors." as occupation_count from occupations where occupation="Doctor";
+select "There are a total of ",count(occupation)," singers." as occupation_count from occupations where occupation="Singer";
+select "There are a total of ",count(occupation)," actors." as occupation_count from occupations where occupation="Actor";
+select "There are a total of ",count(occupation)," professors." as occupation_count from occupations where occupation="Professor";
+
+select sum(population) from city where countrycode='jpn';
+
+select round(avg(population)) from city
+
+select avg(population) from city where district='California';
+
+select sum(population) from city where district='California';
+
+select count(name) from city where population>100000;
+
+SELECT CASE WHEN A + B > C THEN CASE WHEN A = B AND B = C THEN 'Equilateral' WHEN A = B OR B = C OR A = C THEN 'Isosceles' WHEN A != B OR B != C OR A != C THEN 'Scalene' END
+ELSE 'Not A Triangle' END FROM TRIANGLES;
+
+SELECT DISTINCT(CITY) FROM STATION WHERE SUBSTR(CITY,1,1) IN ('A','E','I','O','U');
+
+SELECT DISTINCT(CITY) FROM STATION WHERE CITY LIKE '%[a,e,i,o,u]' ;
+
+SELECT DISTINCT(CITY) FROM STATION WHERE CITY LIKE '[a,e,i,o,u]%[a,e,i,o,u]' ;
+
+select name from employee order by name asc;
+
+select name from employee where salary>2000 and months<10 order by employee_id asc
+
+SELECT DISTINCT(CITY) FROM STATION WHERE CITY LIKE '[^AEIOU]%' ;
+
+SELECT DISTINCT(CITY) FROM STATION WHERE CITY LIKE '%[^AEIOU]' ;
+
+SELECT DISTINCT(CITY) FROM STATION WHERE CITY LIKE '%[^AEIOU]' or city like '[^AEIOU]%' ;
+
+SELECT DISTINCT(CITY) FROM STATION WHERE city like '[^AEIOU]%[^aeiou]' ;
+
+select name from students where marks>75 order by right(name,3),id asc;
+12/22/21 COMPLETED ALL BASIC SELECT CHALLENGES
+
+select truncate(sum(lat_n),4) lat_n from station where lat_n>38.7880 and lat_n<137.2345;
+
+select truncate(max(lat_n),4) lat_n from station where lat_n<137.2345;

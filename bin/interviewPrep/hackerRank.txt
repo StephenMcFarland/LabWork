@@ -1,0 +1,273 @@
+//which cat will reach the mouse first
+static String catAndMouse(int x, int y, int z) {
+
+        if(Math.abs(x-z)<Math.abs(y-z)){
+            return "Cat A";
+        }else if(Math.abs(y-z)<Math.abs(x-z)){
+            return "Cat B";
+        }else{
+            return "Mouse C";
+        }
+    }
+
+//this example made it easy https://www.tutorialspoint.com/java/math/biginteger_isprobableprime.htm
+BigInteger bi1;
+bi1 = new BigInteger(n);
+        bufferedReader.close();
+        if(bi1.isProbablePrime(1)){
+            System.out.println("prime");
+        }else{
+            System.out.println("not prime");
+        }
+        
+//stuck on this one, getting mostly right, count consecutive subarrays that have negative sum making it harder than it needs to be
+ArrayList<Integer> A = new ArrayList<Integer>();
+        ArrayList<Integer> ni = new ArrayList<Integer>();
+        Scanner scanner = new Scanner(System.in);
+
+int n = scanner.nextInt();
+for(int e=0;e<n;e++){
+    int ae = scanner.nextInt();
+    A.add(ae);
+}
+
+scanner.close();
+
+        int np=0;
+   
+        ArrayList<Integer> sub = new ArrayList<Integer>();
+        for(int j=0;j<n;j++){
+            int sum = 0;
+           
+            for(int k=j;k<n;k++){
+                
+                
+                sum+=A.get(k);
+                
+                if(sum<0){
+                    np++;
+                               
+                 
+                }
+            }
+        }
+System.out.println(np);
+
+
+
+
+
+//find number of pairs in array are divisible by k
+    public static int divisibleSumPairs(int n, int k, List<Integer> ar) {
+    // Write your code here
+int pairs = 0;
+
+for(int i=0;i<n;i++){
+    for(int j=i+1;j<n;j++){
+        if((ar.get(i)+ar.get(j))%k==0){
+            pairs+=1;
+        }
+    }
+ 
+}
+   return pairs;
+    }
+
+}
+
+
+
+// Java Prep Java List
+//Just started need to accomodate varying number of queries
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+       Scanner in = new Scanner(System.in);
+//        5
+// 12 0 1 78 12
+// 2
+// Insert
+// 5 23
+// Delete
+// 0 print out result one line of integers separated by space
+
+int n = in.nextInt(); //# in array
+String arr = in.nextLine(); // array
+int q = in.nextInt(); // # of commands to perform
+String a1 = in.nextLine(); // word command
+String a1index = in.nextLine(); // index and num to perform
+String a2 = in.nextLine(); // 2nd word command
+int a2index = in.nextInt(); // index
+String[] a1a = a1index.split(" ");
+
+ArrayList<Integer> ial = new ArrayList<Integer>();
+String[] ia = arr.split(" ");
+String v = "";
+for(int i=0;i<ia.length;i++){
+    v = ia[i];
+    ial.add(Integer.parseInt(v));
+}
+if(a1.equals("Insert")){
+ial.set(Integer.parseInt(a1a[0]),Integer.parseInt(a1a[1]));
+ial.set(Integer.parseInt(a1a[0]),Integer.parseInt(a1a[1]));
+}
+if(a2.equals("Delete")){
+ial.remove(a2index);
+}
+
+for(int j=0;j<ial.size();j++){
+System.out.print(ial.get(j));
+if(j<ial.size()){
+    System.out.print(" ");
+}
+}
+
+
+
+
+    }
+}
+
+
+
+
+
+
+
+
+//really tough 'easy' one with priority queue
+public static int cookies(int k, List<Integer> A) {
+    // Write your code here
+    int numCookies = A.size();
+        int minSweetness = k;
+     int count = 0;
+        PriorityQueue<Integer> he = new PriorityQueue<Integer>(numCookies);
+        for(int i = 0; i < numCookies; i++){
+            int sweetness = A.get(i);
+            he.add(sweetness);
+        }
+        while(he.peek() < minSweetness && he.size() > 1){
+            int ne = he.poll() + 2*he.poll();
+            he.add(ne);
+            count++;
+        }
+        if(he.peek() >= minSweetness){
+            return count;
+        } else{
+            return -1;
+         }
+//  Collections.sort(A);
+//     int c=0;
+//     int ls1 = A.get(0);
+//     int ls2 = 0;
+//     while(ls1<=k&&ls2<=k){
+//      //Collections.sort(A);
+//      ls1 = Collections.min(A);//A.get(0);
+//      A.remove(A.indexOf(ls1));
+//      ls2 = Collections.min(A);//A.get(1);
+//      //A.remove(0);
+//      A.remove(A.indexOf(ls2));
+//      A.add(ls1+2*ls2);
+//      c++;  
+//     //    if(c>100500){
+//     //     return -1;
+//     // } 
+//     }
+  
+// return c-1;
+    }
+
+
+
+
+
+  
+  public static List<Integer> matchingStrings(List<String> strings, List<String> queries) {
+    int count=0;
+    List<Integer> ia = new ArrayList<Integer>();
+    
+for(int i=0;i<queries.size();i++){
+    for(int j=0;j<strings.size();j++){
+        if(queries.get(i).equals(strings.get(j))){
+            count++;
+        }
+    }
+    ia.add(count);
+    count=0;
+}
+return ia;
+    } 
+  
+  
+  
+  
+  //Rotate d times to the left in array arr
+     public static List<Integer> rotateLeft(int d, List<Integer> arr) {
+    // Write your code here
+    
+    d = d%arr.size();
+      int x;
+      for(int i=0;i<d;i++){
+         x=arr.get(0);
+         arr.remove(arr.get(0));
+         arr.add(x);
+      }
+      return arr;
+  
+  
+  
+  
+  
+  //8 of 10 test cases passed 
+     public static List<Integer> rotateLeft(int d, List<Integer> arr) {
+    // Write your code here
+    int temp1 = 0;
+    int temp2 = 0;
+            for(int i=0;i<d;i++){
+                for(int j=arr.size()-1;j>=0;j--){
+                    int p = 0;
+                    if(j==0){
+                        p=arr.size()-1;
+                    }else{
+                        p=j-1;
+                    }
+                    if(j==arr.size()-1){
+                       temp1=arr.get(j); 
+                        temp2=arr.get(p);
+                    arr.set(p,temp1);
+                    
+                    }else{
+                       temp1=temp2; 
+                        temp2=arr.get(p);
+                    arr.set(p,temp1);
+                    
+                    }
+                
+                    
+                    
+                }
+            }
+            return arr;
+    }
+   
+   
+   
+   
+   
+   
+   
+    public static List<Integer> dynamicArray(int n, List<List<Integer>> queries) {
+    // Write your code here
+int lastAnswer = 0;
+int idx = (x+lastAnswer)%n;
+int[][] arr = new int[n][n];
+
+
+
+    }
