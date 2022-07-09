@@ -1,3 +1,6 @@
+//addition sign needed, formula in the link
+select abs(round(min(lat_n) - max(lat_n),4))+abs(round(min(long_w) - max(long_w),4)) from station;
+
 select round(long_w,4) from station where lat_n = (select min(lat_n) from station where lat_n>38.7780);
 
 select round(min(lat_n),4) from station where lat_n>38.7780;
