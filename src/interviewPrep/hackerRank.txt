@@ -1,3 +1,25 @@
+//counting valleys, remember single quotes for chars,
+    public static int countingValleys(int steps, String path) {
+    // Write your code here
+int level=0;
+int count=0;
+
+for(int i=0;i<path.length();i++){
+    if(path.charAt(i)=='D'){
+        level--;
+    }else{
+        level++;
+        if(level==0){
+            count++;
+        }
+    }
+}
+  return count;
+    }
+
+
+
+
 //which cat will reach the mouse first
 static String catAndMouse(int x, int y, int z) {
 
