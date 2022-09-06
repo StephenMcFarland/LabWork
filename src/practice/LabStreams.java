@@ -1,10 +1,12 @@
-		import java.util.ArrayList;
-		import java.util.Arrays;
-		import java.util.List;
-		//import java.util.Stream;
-		import java.util.stream.Stream;
-
 package practice;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+//import java.util.Stream;
+import java.util.stream.Stream;
+import java.util.Collections;
+
 
 public class LabStreams {
 
@@ -37,13 +39,23 @@ public class LabStreams {
 //					List<Integer> evenNumbersList = stream2.filter(i -> i%2 == 0)
 //					                                    .collect(Collectors.toList());
 //					System.out.print(evenNumbersList);
-				List<Integer> numbers = new ArrayList<>(Arrays.asList(0,2,-1,5,6,-2,9,-4,-2));
-					//numbers.stream().
-					//Arrays.sort(numbers);
-				Stream<Integer> numStream = Stream.of(1,3,5,4,2);
+				//List<Integer> numbers = new ArrayList<>(Arrays.asList(0,2,-1,5,6,-2,9,-4,-2));
+				int[] numbers = {0,2,-1,5,6,-2,9,-4,-2};
+				Integer[] numbersArr = {0,2,-1,5,6,-2,9,-4,-2};
+				System.out.println(Arrays.toString(numbers));
+				
+					//numbers.stream().filter()
+					
+					Arrays.sort(numbers);
+					System.out.println("Array sorted:  " + Arrays.toString(numbers));
+					Arrays.sort(numbersArr, Collections.reverseOrder());
+					System.out.println("Array Reversed:  " + Arrays.toString(numbersArr));
+					
+					
+					Stream<Integer> numStream = Stream.of(1,3,5,4,2);
 
 				numStream.sorted()
-						 .forEach(System.out::println);
+						 .forEach(System.out::print);
 					
 					
 					
@@ -86,9 +98,9 @@ public class LabStreams {
 		            .forEach(System.out::println);
 			}
 
-		}
+
 
 
 	}
 
-}
+
