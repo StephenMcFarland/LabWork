@@ -1,5 +1,6 @@
 //break up candy bar m consecutive blocks that add up to d, how many times?
 // birthday bar, Algorithms, Implementation, Subarray Division
+// need to fix 4 test cases
  public static int birthday(List<Integer> s, int d, int m) {
     // Write your code here
     int c=0;
