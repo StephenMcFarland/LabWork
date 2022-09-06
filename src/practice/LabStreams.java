@@ -43,7 +43,8 @@ public class LabStreams {
 				int[] numbers = {0,2,-1,5,6,-2,9,-4,-2};
 				Integer[] numbersArr = {0,2,-1,5,6,-2,9,-4,-2};
 				System.out.println(Arrays.toString(numbers));
-				
+				Arrays.sort(numbersArr,2,6);
+				System.out.println("Array Sorted Range:  " + Arrays.toString(numbersArr));
 					//numbers.stream().filter()
 					
 					Arrays.sort(numbers);
@@ -58,7 +59,7 @@ public class LabStreams {
 						 .forEach(System.out::print);
 					
 					
-					
+					System.out.println();
 					
 					List<String> memberNames = new ArrayList<>();
 					memberNames.add("Amitabh");
