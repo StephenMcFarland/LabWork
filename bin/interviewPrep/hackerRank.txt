@@ -4,18 +4,19 @@
 
 // find maximum sum of priced keyboard and drive within budget b
 // 9/16 test cases fail, I think I need to put sums in array then find max using collections
-//
- static int getMoneySpent(int[] keyboards, int[] drives, int b) {
+// and that worked! I'm sure I could clean this up a little but this is good enough to move on to the next challenge
+static int getMoneySpent(int[] keyboards, int[] drives, int b) {
         /*
          * Write your code here.
          */
          //Arrays.sort(keyboards);
         //Arrays.sort(drives);
+        List<Integer> sums = new ArrayList<Integer>();
          
          for(int j=keyboards.length-1;j>0;j--){
          for(int i=drives.length-1;i>0;i--){
              if(keyboards[j]+drives[i]<=b){
-                 return keyboards[j]+drives[i];
+                 sums.add(keyboards[j]+drives[i]);
              }
          }
          
@@ -23,9 +24,12 @@
          
          
          
-         
-return -1;
-    }
+         if(sums.size()>0){
+             int buy = Collections.max(sums);
+             return buy;
+         }else{
+             return -1;
+         }
 
 
 
