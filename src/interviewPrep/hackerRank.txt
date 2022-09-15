@@ -1,3 +1,36 @@
+
+
+
+
+// find maximum sum of priced keyboard and drive within budget b
+// 9/16 test cases fail, I think I need to put sums in array then find max using collections
+//
+ static int getMoneySpent(int[] keyboards, int[] drives, int b) {
+        /*
+         * Write your code here.
+         */
+         //Arrays.sort(keyboards);
+        //Arrays.sort(drives);
+         
+         for(int j=keyboards.length-1;j>0;j--){
+         for(int i=drives.length-1;i>0;i--){
+             if(keyboards[j]+drives[i]<=b){
+                 return keyboards[j]+drives[i];
+             }
+         }
+         
+         }
+         
+         
+         
+         
+return -1;
+    }
+
+
+
+
+
  //return shortest number of pages to turn to reach page p starting from front or back
 //kind of messy but passes all tests   
     public static int pageCount(int n, int p) {
