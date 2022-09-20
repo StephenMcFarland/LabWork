@@ -1,4 +1,26 @@
-  
+  //I know I've done this one before, hackerrank doesn't keep track? find the maximum difference between a given number
+  // and an array of numbers, if greater than all numbers return 0
+   public static int hurdleRace(int k, List<Integer> height) {
+    // Write your code here
+    int dose = 0;
+    int max = 0;
+    
+            for(int i=0;i<height.size();i++){
+                if(k-height.get(i)<0){
+                    dose = Math.abs(k-height.get(i));
+                    //if(dose>max)max=dose;
+                    
+                }else{
+                    dose = 0;
+                }
+                max = Math.max(dose,max);
+                
+            }
+            return max;
+    }
+    
+    
+    
   //return the largest subarray with a difference no greater than 1 between each element
   //initially I thought to sort the array but didn't, start the count at 1, I had most of the logic
   
