@@ -1,3 +1,95 @@
+  //borrowed from geedsforgeeks.org
+  static void SubarrayWithMaxSum(Vector<Integer> nums)
+  {
+    // Initialize currMax and globalMax
+    // with first value of nums
+    int endIndex = 0, currMax = nums.get(0);
+    int globalMax = nums.get(0);
+ 
+    // Iterate for all the elements
+    // of the array
+    for (int i = 1; i < nums.size(); ++i)
+    {
+ 
+      // Update currMax
+      currMax = Math.max(nums.get(i),
+                         nums.get(i) + currMax);
+ 
+      // Check if currMax is greater
+      // than globalMax
+      if (currMax > globalMax)
+      {
+        globalMax = currMax;
+        endIndex = i;
+      }
+    }
+ 
+    int startIndex = endIndex;
+ 
+    // Traverse in left direction to
+    // find start Index of subarray
+    while (startIndex >= 0)
+    {
+      globalMax -= nums.get(startIndex);
+ 
+      if (globalMax == 0)
+        break;
+ 
+      // Decrement the start index
+      startIndex--;
+    }
+ 
+    // Printing the elements of
+    // subarray with max sum
+    for(int i = startIndex; i <= endIndex; ++i)
+    {
+      System.out.print(nums.get(i) + " ");
+    }
+  }
+  //next example
+   static void SubarrayWithMaxSum(Vector<Integer> nums)
+    {
+        // Initialize currMax and globalMax
+        // with first value of nums
+        int currMax = nums.get(0), globalMax = nums.get(0);
+        // Initialize endIndex startIndex,globalStartIndex
+        int endIndex = 0;
+        int startIndex = 0, globalMaxStartIndex = 0;
+ 
+        // Iterate for all the elements of the array
+        for (int i = 1; i < nums.size(); ++i) {
+ 
+            // Update currMax and startIndex
+            if (nums.get(i) > nums.get(i) + currMax) {
+                currMax = nums.get(i);
+                startIndex = i; // update the new startIndex
+            }
+ 
+            // Update currMax
+            else if (nums.get(i) < nums.get(i) + currMax) {
+                currMax = nums.get(i) + currMax;
+            }
+ 
+            // Update globalMax and globalMaxStartIndex
+            if (currMax > globalMax) {
+                globalMax = currMax;
+                endIndex = i;
+                globalMaxStartIndex = startIndex;
+            }
+        }
+ 
+        // Printing the elements of subarray with max sum
+        for (int i = globalMaxStartIndex; i <= endIndex;
+             ++i) {
+            System.out.print(nums.get(i) + " ");
+        }
+    }
+  
+  
+  
+  
+  
+  
   //I know I've done this one before, hackerrank doesn't keep track? find the maximum difference between a given number
   // and an array of numbers, if greater than all numbers return 0
    public static int hurdleRace(int k, List<Integer> height) {
