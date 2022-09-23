@@ -1,3 +1,11 @@
+//
+select distinct professor.name, course.name
+FROM professor p
+JOIN schedule s on s.professor_id = p.id
+JOIN course c on s.course_id = c.id
+WHERE c.department_id <> p.department_id;
+
+
 //addition sign needed, formula in the link
 select abs(round(min(lat_n) - max(lat_n),4))+abs(round(min(long_w) - max(long_w),4)) from station;
 
