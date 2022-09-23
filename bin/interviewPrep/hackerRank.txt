@@ -1,5 +1,28 @@
   //1 week preparation kit
   //Given five positive integers, find the minimum and maximum values that can be calculated by summing exactly four of the five integers. Then print the respective minimum and maximum values as a single line of two space-separated long integers.
+  //do a lot of spinning tires when I try to tackle it fast without thinking and looking at the explanation, fairly simple after that
+   public static void miniMaxSum(List<Integer> arr) {
+    // Write your code here
+    List<Long> sumArr = new ArrayList<Long>();
+    
+long sum = 0;
+for(int j=0;j<arr.size();j++){
+    for(int i=0;i<arr.size();i++){
+        if(i!=j){
+            sum+=arr.get(i);
+        }
+    }
+    sumArr.add(sum);
+    sum=0;
+}
+  
+  long min = Collections.min(sumArr);
+  long max = Collections.max(sumArr);
+ 
+ System.out.println(min + " " + max);
+    }
+  //Given five positive integers, find the minimum and maximum values that can be calculated by summing exactly four of the five integers. Then print the respective minimum and maximum values as a single line of two space-separated long integers.
+  //this implementation doesn't work if all elements are the same number
   public static void miniMaxSum(List<Integer> arr) {
     // Write your code here
 int min = Collections.min(arr);
